@@ -1,5 +1,9 @@
-// JSONファイルの取得パス（相対パスで確実に指定）
-const jsonPath = './data/works.json';
+// 開いているページのURL（パス）に "/pages/" が含まれているかでJSONの場所を切り替える
+let jsonPath = './data/works.json'; // 通常（トップページなど）のパス
+
+if (window.location.pathname.includes('/pages/')) {
+	jsonPath = '../data/works.json'; // pagesフォルダ内にいるときは、1つ上の階層に戻ってからdataを探す
+}
 
 // JSONを読み込んで作品を表示・フィルター
 fetch(jsonPath)
