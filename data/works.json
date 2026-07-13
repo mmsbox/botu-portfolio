@@ -1,0 +1,82 @@
+[
+	{
+		"id": "1",
+		"title": "清光整備株式会社(架空案件)",
+		"period": "2025年6月〜2025年7月",
+		"target": "地域の整備工場を利用する、30〜60代の一般ユーザー・家族層",
+		"purpose": "車検・修理・保険などの幅広いサービスを提供する地域密着型整備工場を想定し、安心感・誠実さ・親しみやすさをバランスよく伝えるWebサイトのデザインを提案。",
+		"problem": ["整備業界に多い古い印象を払拭しつつ、地域性と誠実さを感じられるデザイン構成"],
+		"points": "・無機質で古い印象になりがちな業界サイトを、やわらかく落ち着いたブルーと読みやすい情報設計で刷新\n・サービスごとの紹介セクションは専門用語を避け、ユーザーに伝わる言葉で構成\n・実案件に基づいて制作したがクライアント都合で中止となったため、内容を再構成し“実務ベースの架空案件”として完結",
+		"tools": "Figma / Illustrator",
+		"mockup": "/assets/Works/Mockup_1.webp",
+		"card_mockup": "/assets/Works/card-1.webp",
+		"pc_image": "/assets/Works/Works-1.webp",
+		"sp_image": "https://via.placeholder.com/300x600?text=SP",
+		"tags": ["Web", "Figma"]
+	},
+	{
+		"id": "2",
+		"title": "架空オンライン英語学習サービス / Phase Talk",
+		"period": "2025年6月〜2025年7月 / 約3週間（デザイン1週 + コーディング2週）\nディレクション〜デザイン＋コーディング担当（個人制作）",
+		"target": "職場でキャリアアップを目指す20代後半〜40代前半の中堅社会人",
+		"purpose": [
+			"「話す力」で次のキャリアを切り拓く。\n忙しい社会人でも、自分のペースで実践的な英会話を身につけられるオンライン学習サービス。信頼感と親しみやすさを両立したUI設計で、『利用してみようかな』と思える体験を目指した。"
+		],
+		"problem": "【背景と課題】\n- ビジネス英会話は必要性を感じていても、「忙しくて時間がない」「何から始めればいいかわからない」という声が多い。\n- 従来の英会話サイトは情報量が多く、初めて訪れるユーザーには心理的ハードルが高い。\n\n【デザインでの解決策】\n- サービスの3要素（話す・成長・支援）を直感的に理解できるヒーロースライダーを配置し、第一印象で世界観に引き込む。\n- 余白を広めにとり、情報を“詰め込みすぎない”レイアウトで安心感を演出。\n- 親しみやすい色合いとイラストを併用し、信頼感と柔らかさを両立。\n\n【実装面の課題】\n- 実験的なUI（横スクロールやスライダー）を導入しつつも、CSS設計や命名規則の統一に改善余地あり。\n- 今後はBEMやFLOCSSを採用し、スケーラブルで保守性の高いコードを目指す。",
+		"points": "• ヒーロービジュアル：直感的なループスライダーで3要素（話す・成長・支援）を訴求。\n• Pricingセクション：カード型＋横スクロール構成で、複数プランを見やすく提示。\n• 動きの統一感：GSAPによるアニメーションやスライドUIで、世界観を損なわない動きを実現。",
+		"tools": "Figma / Photoshop / Illustrator / HTML / CSS / JavaScript / GSAP",
+		"mockup": "/assets/Works/Mockup_2.webp",
+		"code_url": "/Works/PhaseTalk",
+		"pc_image": "/assets/Works/Works-2.png",
+		"sp_image": "/assetsassets/Works/Works-2__sp.png",
+		"tags": ["Web"]
+	},
+	{
+		"id": "3",
+		"title": "Silent Orbit",
+		"period": "2024年1月〜2024年2月",
+		"target": "ミニマリズムが好きなデザインファン",
+		"purpose": "静寂な軌道をテーマにしたポートフォリオサイト案",
+		"problem": "余白と余韻を活かしたデザイン構成",
+		"tools": "VSCode / GSAP / SCSS",
+		"mockup": "https://via.placeholder.com/300x200?text=Mockup",
+		"pc_image": "https://via.placeholder.com/600x400?text=PC",
+		"sp_image": "https://via.placeholder.com/300x600?text=SP"
+	},
+	{
+		"id": "4",
+		"title": "Astro Radio",
+		"period": "2023年12月",
+		"target": "深夜ラジオ好き・感性派ユーザー",
+		"purpose": "音のない宇宙で「想像の音」を届けるメディアデザイン",
+		"problem": "聴覚的要素を視覚で補完するには？",
+		"tools": "Adobe XD / Canva / JS",
+		"mockup": "https://via.placeholder.com/300x200?text=Mockup",
+		"pc_image": "https://via.placeholder.com/600x400?text=PC",
+		"sp_image": "https://via.placeholder.com/300x600?text=SP"
+	},
+	{
+		"id": "5",
+		"title": "Stellar Notes",
+		"period": "2024年5月",
+		"target": "創作メモや詩を書くクリエイター",
+		"purpose": "星をテーマにしたNotion風メモアプリUI",
+		"problem": "書くことが楽しくなる、余白と動きの設計",
+		"tools": "React / Tailwind CSS / Figma",
+		"mockup": "https://via.placeholder.com/300x200?text=Mockup",
+		"pc_image": "https://via.placeholder.com/600x400?text=PC",
+		"sp_image": "https://via.placeholder.com/300x600?text=SP"
+	},
+	{
+		"id": "6",
+		"title": "Gravity Café",
+		"period": "2024年2月",
+		"target": "日常に少しの非日常を求める人",
+		"purpose": "重力が緩むような癒し系カフェサイトのデザイン案",
+		"problem": "手書き感と整ったUIのバランス",
+		"tools": "Figma / JavaScript / Adobe Fonts",
+		"mockup": "https://via.placeholder.com/300x200?text=Mockup",
+		"pc_image": "https://via.placeholder.com/600x400?text=PC",
+		"sp_image": "https://via.placeholder.com/300x600?text=SP"
+	}
+]

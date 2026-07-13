@@ -1,0 +1,155 @@
+/* ----------------------------------------
+フッターの描画アニメーション全体
+---------------------------------------- */
+
+.drawing-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 8em;
+	padding: 5rem 0 0;
+	min-height: 320px;
+	overflow: visible;
+	border-top: 2px solid #333;
+}
+
+/* SVGの基本サイズと表示制御 */
+.drawing-svg {
+	max-width: 1000px;
+	width: 100%;
+	height: 300px;
+}
+
+#drawing-path {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	opacity: 0;
+	animation: draw 2s ease forwards;
+}
+
+/* メッセージテキストのスタイル */
+.message-text {
+	font-family: 'Baloo 2', sans-serif;
+	font-size: 36px;
+	fill: url(#cuteGradient); /* グラデ */
+	stroke: #fff;
+	stroke-width: 1.5px;
+	text-shadow: 2px 2px 5px #ffebf7;
+	letter-spacing: 2px;
+	animation: floatText 2.5s ease-in-out infinite;
+}
+
+
+/* テキスト位置調整（縦方向の基準線） */
+.line1,
+.line2 {
+	dominant-baseline: hanging;
+}
+
+/* 筆キャラの初期状態 */
+.brush {
+	width: 20%;
+	transform: translateY(100px);
+	opacity: 0;
+	transition: opacity 0.6s ease, transform 0.6s ease;
+	transform-origin: bottom right;
+}
+
+/* 筆キャラが現れる時のアニメーション */
+.brush.animate {
+	opacity: 1;
+	transform: translateY(0);
+	animation: paintBrush 1.8s ease-in-out forwards;
+}
+
+/* ----------------------------------------
+アニメーション定義
+---------------------------------------- */
+@keyframes floatText {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+@keyframes draw {
+	to {
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes textFade {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes paintBrush {
+	0% {
+		transform: rotate(0deg) translateY(0);
+	}
+	15% {
+		transform: rotate(-5deg) translateY(-1px);
+	}
+	30% {
+		transform: rotate(10deg) translateY(2px);
+	}
+	45% {
+		transform: rotate(-7deg) translateY(-1px);
+	}
+	60% {
+		transform: rotate(6deg) translateY(1px);
+	}
+	75% {
+		transform: rotate(-3deg) translateY(0);
+	}
+	100% {
+		transform: rotate(0deg) translateY(0);
+	}
+}
+
+/* ----------------------------------------
+レスポンシブ調整
+---------------------------------------- */
+@media (max-width: 768px) {
+	.drawing-container {
+		max-width: 500px;
+		width: 100%;
+		margin: 2rem auto;
+		padding: 1rem;
+	}
+
+	.drawing-svg {
+		height: auto;
+	}
+
+
+	
+
+	.message-text {
+		font-size: 1.6em;
+	}
+}
+
+@media (max-width: 480px) {
+	.drawing-container {
+		padding-top: 3rem;
+		padding-bottom: 2rem;
+	}
+
+	.brush {
+		width: 40%;
+		transform: translateY(80px);
+	}
+}

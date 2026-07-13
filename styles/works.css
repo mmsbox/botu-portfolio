@@ -1,0 +1,345 @@
+/* グローバルスタイル（全体に適用） */
+body {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	line-height: 1.6;
+	font-size: 1.25rem;
+	background-color:#FFFAF0;
+}
+
+h1 {
+	font-weight: 800;
+	cursor: pointer;
+}
+
+h2 {
+	font-weight: 900;
+}
+
+/* クマちゃんのトップボタンスタイル */
+.top-button {
+	z-index: 999;
+	position: fixed;
+	bottom: 100px;
+	right: 2rem;
+	width: 160px;
+	height: 100px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	animation: float 3s ease-in-out infinite;
+	transition: transform 0.3s ease;
+}
+
+.top-button img {
+	width: 100%;
+	height: auto;
+}
+
+.top-button:hover {
+	transform: translateY(-10px);
+}
+
+/* 吹き出しデザイン */
+.bubble {
+	position: absolute;
+	bottom: 100px; /* クマちゃんの上 */
+	left: 40%;
+	transform: translateX(-50%);
+	background: #fff;
+	padding: 0.5rem 1rem;
+	border-radius: 20px;
+	font-size: 20px;
+	color: #6F1C02;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.5s ease;
+}
+
+/* 吹き出し表示 */
+.bubble.show {
+	opacity: 1;
+}
+
+/* footer */
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 4rem;
+	border-top: solid #333 2px;
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-5px);
+	}
+}
+
+/* ヘッダー */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 4rem;
+	border-bottom: 2px solid #6F1C02;
+	color: #6F1C02;
+	box-sizing: border-box;
+}
+
+nav ul {
+	display: flex;
+	gap: 2rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav a {
+	text-decoration: none;
+	font-weight: 800;
+	color:#6F1C02;
+	transition: color 0.3s;
+	font-size: 1rem;
+	letter-spacing: 0.08em;
+}
+
+nav a:hover {
+	color: #1c77d8;
+}
+
+/* === Heroセクション === */
+.hero {
+	text-align: center;
+	padding: 80px 20px 0;
+}
+
+.hero h1 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+}
+
+.hero p {
+	font-size: 1rem;
+	color: #555;
+}
+
+/* タグボタン */
+
+.filter-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin: 2rem 0;
+	flex-wrap: wrap;
+}
+
+.filter-btn {
+	background-color: transparent;
+	border: 1px solid #aaa;
+	padding: 0.5rem 1rem;
+	border-radius: 9999px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+	background-color: #333;
+	color: #fff;
+	border-color: #333;
+}
+
+.tags {
+	font-size: 0.8rem;
+	color: #666;
+	margin-top: 0.5rem;
+}
+
+/* === 作品一覧グリッド === */
+
+/* グリッド全体 */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 6rem;
+}
+
+/* カード */
+.work-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e0e0e0;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  background: #fff;
+}
+
+.work-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 画像 */
+.work-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.work-card:hover img {
+	transform: scale(1.05);
+}
+
+/* 情報エリア */
+.work-info {
+  padding: 1rem;
+}
+
+/* タグ（小さく上に） */
+.tags {
+  font-size: 0.75rem;
+  color: #999;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* タイトル（左寄せ） */
+.work-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+  color: #333;
+}
+
+/* === ボタン・誘導リンク === */
+.more-info {
+	text-align: center;
+	padding: 40px 20px;
+}
+
+.more-info p {
+	margin-bottom: 20px;
+	color: #444;
+}
+
+.btn {
+	display: inline-block;
+	padding: 12px 24px;
+	background: #00796b;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 999px;
+	font-weight: bold;
+	transition: background 0.3s ease;
+}
+
+.btn:hover {
+	background: #004d40;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  /* ヘッダー */
+  header {
+    padding: 1rem 2rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  /* Heroセクション */
+  .hero {
+    padding: 40px 1rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  /* 作品一覧グリッド */
+  .works-grid {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  /* フィルターボタン */
+  .filter-buttons {
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* トップボタン */
+  .top-button {
+    width: 120px;
+    height: 75px;
+    right: 1rem;
+    bottom: 80px;
+  }
+
+  /* フッター */
+  footer {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* ヘッダー */
+  header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  /* 作品一覧グリッド */
+  .works-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .work-info {
+    padding: 0.8rem;
+  }
+
+  .work-title {
+    font-size: 1rem;
+  }
+
+  /* フッター */
+  footer {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  /* ボタン */
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

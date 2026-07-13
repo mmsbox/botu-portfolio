@@ -1,0 +1,891 @@
+.illustration-section {
+	border-top: solid #333 1px;
+	width: 100%;
+}
+
+.message {
+	position: relative;
+	width: 100vw;
+	height: 240vh;
+	background-color: #bbe9ff;
+	overflow: visible;
+}
+
+
+.message-content {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 210px;
+	left: auto;
+	right: auto;
+	margin: 0 auto;
+	width: clamp(100px, 54%, 868px);
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(8px);
+	border-radius: 20px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+	padding: 4rem;
+	color: #333;
+	line-height: 1.7;
+	z-index: 120;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+.message-content.visible {
+	opacity: 1;
+}
+
+.message-content h4 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	color: #444;
+	font-weight: bold;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	padding-bottom: 0.5rem;
+}
+
+.message-content p {
+	margin-bottom: 1rem;
+	font-size: 1rem;
+}
+
+/* 浮遊アニメーション */
+@keyframes float {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.message img {
+	position: absolute;
+	max-width: 800px;
+	height: auto;
+}
+
+/* ☀️ 太陽 */
+.sun {
+	top: 5%;
+	left: 5%;
+	width: 300px;
+}
+
+/* ☁️ 雲  */
+.cloud1 {
+	top: 16%;
+	/* left: 0%; */
+	width: 26%;
+}
+
+.cloud2 {
+	top: 50%;
+	left: 0;
+	width: 520px;
+}
+
+.cloud3 {
+	right: 0;
+	top: 34%;
+}
+
+.cloud4 {
+	right: 0;
+	bottom: 35%;
+	z-index: 101;
+}
+
+.cloud5 {
+	bottom: 20%;
+	z-index: 101;
+}
+
+.cloud6 {
+	top: 65%;
+	left: 80%;
+	width: 330px;
+}
+
+/* 鳥 */
+.bird {
+	top: 25%;
+	left: 34%;
+	width: 147px;
+	rotate: 8deg;
+}
+
+/* 🌈 虹 */
+.rainbow {
+	top: 19%;
+	right: 2%;
+	width: 31%;
+	rotate: 4deg;
+}
+
+/* ✈️ 飛行機 */
+.airplane {
+	top: 50%;
+	left: 0%;
+	width: 570px;
+	rotate: -10deg;
+	z-index: 99;
+}
+
+/* 🎈 気球 */
+.balloon {
+	top: 36%;
+	left: 30%;
+	width: 250px;
+	animation: balloonFloat 5s ease-in-out infinite;
+}
+
+.paperplane {
+	bottom: 53%;
+	left: 5%;
+	width: 210px;
+	transform: scale(-1, 1);
+	z-index: 99;
+}
+.paperplane-s {
+	bottom: 51%;
+	left: 16%;
+	width: 116px;
+	transform: scale(-1, 1);
+	z-index: 99;
+}
+
+/* 気球ふわふわアニメーション */
+@keyframes balloonFloat {
+	0% {
+		transform: translateY(0) rotate(-12deg);
+	}
+	20% {
+		transform: translateY(-18px) rotate(-10deg);
+	}
+	40% {
+		transform: translateY(0) rotate(-13deg);
+	}
+	60% {
+		transform: translateY(12px) rotate(-14deg);
+	}
+	80% {
+		transform: translateY(-10px) rotate(-11deg);
+	}
+	100% {
+		transform: translateY(0) rotate(-12deg);
+	}
+}
+
+/* 初期状態 */
+.airplane,
+.paperplane,
+.paperplane-s {
+	opacity: 0;
+	position: absolute;
+	pointer-events: none;
+	transition: opacity 0.3s;
+}
+
+/* 紙飛行機（大）：ふわっと斜め右上へ */
+@keyframes flyPaperPlane {
+	0% {
+		transform: translate(0, 0) scale(-1, 1) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(100vw, -100vh) scale(-1, 1) rotate(20deg);
+		opacity: 1; /* 消えないよ！ */
+	}
+}
+
+/* 紙飛行機（小）：ちょっとだけ角度違いで */
+@keyframes flyPaperPlaneS {
+	0% {
+		transform: translate(0, 0) scale(-1, 1) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(90vw, -80vh) scale(-1, 1) rotate(-10deg);
+		opacity: 1;
+	}
+}
+
+@keyframes loopAirplane {
+	0% {
+		transform: translate(100vw, -80vh) rotate(0deg);
+		opacity: 1;
+	}
+
+	30% {
+		transform: translate(30vw, 70vh) rotate(0deg);
+	}
+
+	35% {
+		transform: translate(-100vh, 50vh) scale(1.05) rotate(0deg);
+		filter: drop-shadow(0 0 15px gold);
+	}
+
+	40% {
+		transform: translate(-100vh, 50vh) rotate(0deg);
+		filter: none;
+	}
+
+	50% {
+		transform: translate(30vw, 80vh) rotate(360deg);
+	}
+
+	100% {
+		transform: translate(-100vw, 150vh) rotate(1440deg);
+		opacity: 1;
+	}
+}
+
+.airplane-wrapper {
+	position: absolute;
+	width: 300px;
+	height: auto;
+	top: 30%;
+	left: 30%;
+	z-index: 100;
+	opacity: 1;
+}
+
+/* 飛行機 */
+.airplane {
+	position: absolute;
+	width: 100%;
+	display: block;
+}
+
+/* 吹き出し全体 */
+.speech {
+	position: absolute;
+	top: -60px;
+	left: 80px;
+	background: #fff;
+	border: 2px solid #333;
+	border-radius: 12px;
+	padding: 8px 14px;
+	font-size: 0.9rem;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	transform: translateY(10px);
+	transition: all 0.5s ease;
+	pointer-events: none;
+	white-space: nowrap;
+}
+
+/* 吹き出し表示アニメ */
+.speech1.show {
+	opacity: 1;
+	transform: translateY(0);
+	animation: fadeOut 1s ease 3s forwards;
+}
+.speech2.show {
+	opacity: 1;
+	transform: translateY(0);
+	animation: fadeOut 1s ease 2s forwards;
+}
+.speech3.show {
+	opacity: 1;
+	transform: translateY(0);
+	animation: fadeOut 2s ease 4s forwards;
+}
+
+@keyframes fadeOut {
+	to {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+}
+
+/* .code-message スタイル */
+
+.code-message {
+	position: relative;
+	width: 100vw;
+	height: 134vh;
+	background: linear-gradient(to bottom, #57bff2, #b6e1f5); /* 大気の濃淡 */
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.code-content {
+	position: static;
+	width: clamp(100px, 54%, 868px);
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(8px);
+	border-radius: 20px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+	padding: 4rem;
+	/* animation: float 6s ease-in-out infinite; */
+	color: #333;
+	line-height: 1.7;
+	z-index: 10;
+}
+
+.code-content {
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeSlideUp 1.5s ease-out forwards;
+	animation-delay: 0.5s;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.8s ease-out;
+}
+@keyframes fadeSlideUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* タイトルやテキストも同様に調整したい場合 */
+.code-content h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	color: #444;
+	font-weight: bold;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	padding-bottom: 0.5rem;
+}
+
+.code-content p {
+	margin-bottom: 1rem;
+	font-size: 1rem;
+}
+
+.fade-line {
+	opacity: 0;
+	transform: translateY(10px);
+	animation: fadeUp 1s ease forwards;
+}
+
+.fade-line:nth-child(1) {
+	animation-delay: 0.6s;
+}
+.fade-line:nth-child(2) {
+	animation-delay: 1.2s;
+}
+
+@keyframes fadeUp {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.code-cloud {
+	position: absolute;
+	opacity: 1;
+	width: 200px;
+	animation: cloudSlide 3s ease-out forwards;
+	pointer-events: none;
+	animation-play-state: paused;
+}
+
+.codeC1 {
+	top: 10%;
+	left: -250px;
+	width: 20%;
+	animation-delay: 0s;
+	z-index: 15;
+}
+
+.codeC2 {
+	bottom: 2%;
+	left: -300px;
+	width: 30%;
+	animation-delay: 0.5s;
+	filter: blur(6px);
+}
+
+.codeC3 {
+	top: 45%;
+	left: -200px;
+	width: 30%;
+	animation-delay: 1s;
+	scale: scaleX(-1);
+	filter: blur(2px);
+}
+
+.codeAp {
+	top: 48%;
+	left: 300px;
+	width: 30%;
+	filter: blur(2px);
+	transform: scale(-1, 1);
+}
+
+@keyframes cloudSlide {
+	to {
+		left: 110%;
+	}
+}
+
+/* ================ ここから宇宙 (.space-message) ================  */
+
+.space-message {
+	position: relative;
+	width: 100vw;
+	height: 240vh;
+	background: linear-gradient(to bottom, #4551aa, #080c24);
+	overflow: hidden;
+	opacity: 0;
+	transform: scale(0.98) translateY(50px); /* 重そうに */
+	transition: all 1.2s ease;
+}
+.space-message::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(ellipse at center, #394493, #00094b);
+	opacity: 0;
+	transition: opacity 2s ease;
+	z-index: -1;
+}
+.space-message.active::before {
+	opacity: 1;
+}
+.space-message.active {
+	opacity: 1;
+	transform: scale(1) translateY(0);
+}
+
+.star-field {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.star {
+	position: absolute;
+	width: 2px;
+	height: 2px;
+	background: white;
+	border-radius: 50%;
+	box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.6);
+	animation: twinkle 3s infinite ease-in-out alternate;
+	opacity: 0.8;
+}
+
+/* 輝きアニメーション */
+@keyframes twinkle {
+	0% {
+		opacity: 0.2;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1.4);
+	}
+}
+
+/* 流れ星 */
+
+.shooting-star {
+	position: absolute;
+	width: 80px;
+	height: 2px;
+	background: linear-gradient(90deg, white, transparent);
+	transform: rotate(45deg);
+	opacity: 0;
+	z-index: 2;
+	animation: shoot 1.5s ease-in-out forwards;
+}
+
+@keyframes shoot {
+	0% {
+		opacity: 0;
+		transform: translate(0, 0) rotate(45deg);
+	}
+	10% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(120px, 120px) rotate(45deg);
+	}
+}
+
+.space-content {
+	position: absolute;
+	top: 25%;
+	right: 8%;
+	width: clamp(100px, 54%, 868px);
+	background: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(8px);
+	border-radius: 20px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+	padding: 4rem;
+	/* animation: float 6s ease-in-out infinite; */
+	color: #333;
+	line-height: 1.7;
+	z-index: 10;
+}
+
+.space-content h4 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	color: #444;
+	font-weight: bold;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	padding-bottom: 0.5rem;
+}
+
+.space-content p {
+	margin-bottom: 1rem;
+	font-size: 1rem;
+}
+
+.planet,
+.earth,
+.moon,
+.astronaut,
+.rocket,
+.dolphin-constellation {
+	position: absolute;
+}
+
+/* 土星 */
+.planet {
+	top: 21%;
+	left: 10%;
+	width: 30%;
+	z-index: 101;
+	animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+}
+
+/* 地球 */
+.earth {
+	top: 6%;
+	left: 59%;
+	width: 20%;
+	z-index: 100;
+	animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+}
+
+/* 月 */
+.moon {
+	top: 5%;
+	left: 52%;
+	width: 8%;
+	animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floating-y {
+	0% {
+		transform: translateY(-5%);
+	}
+	100% {
+		transform: translateY(-10%);
+	}
+}
+
+/* 宇宙飛行士 */
+.astronaut {
+	bottom: 34%;
+	left: 52%;
+	width: 18%;
+	animation: floatAstronaut 5s ease-in-out infinite;
+}
+
+/* ロケット */
+.rocket {
+	bottom: 6%;
+	left: 10%;
+	width: 30%;
+	z-index: 10;
+}
+
+/* 星座（イルカ） */
+.dolphin-constellation {
+	top: 55%;
+	left: 10%;
+	width: 30%;
+	rotate: -62deg;
+	opacity: 0.47;
+}
+
+@keyframes floatAstronaut {
+	0%,
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-10px) rotate(2deg);
+	}
+}
+.tether-svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 5;
+}
+
+.tether-path {
+	stroke-dasharray: 4;
+	animation: wigglePath 6s ease-in-out infinite;
+}
+
+@keyframes wigglePath {
+	0%,
+	100% {
+		d: path('M 100 940 C 250 880, 350 780, 460 750 S 650 680, 620 660');
+	}
+	50% {
+		d: path('M 100 940 C 260 890, 360 800, 470 760 S 660 700, 620 660');
+	}
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+	/* メッセージコンテンツ共通スタイル */
+	.message-content,
+	.code-content,
+	.space-content {
+		width: 100%;
+		max-width: 500px;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+		padding: 1.8rem;
+		transform: none;
+		position: relative;
+	}
+
+	/* 個別調整 */
+	.message-content {
+		top: 30%;
+	}
+
+	.code-content {
+		position: static;
+		margin-top: 20vh;
+	}
+
+	/* イラスト素材の基本設定 */
+	.message img {
+		max-width: 100%;
+		height: auto;
+		bottom: 16.5%;
+	}
+
+	/* イラスト位置の調整 */
+	.sun {
+		width: 25%;
+		top: 2%;
+		left: 8%;
+	}
+
+	.cloud1 {
+		width: 35%;
+		top: 20%;
+	}
+
+	.cloud2 {
+		width: 45%;
+		top: 45%;
+	}
+
+	.cloud3,
+	.cloud4 {
+		width: 40%;
+		right: -5%;
+	}
+
+	.cloud5 {
+		width: 35%;
+		bottom: 25%;
+	}
+
+	.cloud6 {
+		width: 30%;
+		top: 60%;
+	}
+
+	.bird {
+		width: 20%;
+		top: 18%;
+		left: 47%;
+	}
+
+	.rainbow {
+		width: 40%;
+		top: 11%;
+		right: 5%;
+	}
+
+	.balloon {
+		width: 30%;
+		top: 70%;
+		left: 20%;
+	}
+
+	.airplane {
+		width: 78%;
+		top: 55%;
+	}
+
+	.paperplane,
+	.paperplane-s {
+		width: 120px;
+		bottom: 48%;
+	}
+
+	.bubble-img {
+		width: 100%;
+		max-width: 320px;
+		height: auto;
+	}
+
+	.about-bubble,
+	.strength-bubble {
+		width: 90%;
+		max-width: 320px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.about-bubble h3,
+	.strength-bubble h3 {
+		font-size: 1.3rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.message {
+		overflow: hidden;
+	}
+	.message-content,
+	.code-content,
+	.space-content {
+		width: calc(100% - 2rem);
+		margin: 0 1rem;
+		padding: 1.25rem;
+	}
+
+	/* コンテンツ内の要素調整 */
+	.message-content h4,
+	.code-content h3,
+	.space-content h4 {
+		font-size: 1.1rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.message-content p,
+	.code-content p,
+	.space-content p {
+		font-size: 0.9rem;
+		margin-bottom: 0.75rem;
+		line-height: 1.5;
+	}
+
+	/* 高さ調整 */
+	.message,
+	.code-message,
+	.space-message {
+		height: 128vh;
+	}
+
+	/* 位置調整 */
+	.message-content {
+		top: 45%;
+	}
+
+	.code-content {
+		margin-top: 15vh;
+	}
+
+	.space-content {
+		top: 30%;
+	}
+
+	/* About セクションの調整 */
+
+	.ticket {
+		max-width: 140px;
+	}
+
+	.avatar {
+		width: 160px;
+		height: 160px;
+	}
+
+	.bubble-img,
+	.skills-bubble .bubble-img {
+		max-width: 260px;
+	}
+
+	.about-bubble,
+	.strength-bubble {
+		width: 85%;
+		max-width: 260px;
+	}
+
+	.about-bubble h3,
+	.strength-bubble h3,
+	.skills-bubble h3 {
+		font-size: 1.1rem;
+	}
+
+	.about-main-visual {
+		padding: 1rem 1rem;
+	}
+}
+
+/* タブレット用の微調整 */
+@media (max-width: 1024px) and (min-width: 769px) {
+	.message-content,
+	.code-content,
+	.space-content {
+		width: 70%;
+		right: 5%;
+		padding: 2rem;
+	}
+
+	/* イラストの配置調整 */
+	.message img {
+		max-width: 90%;
+	}
+
+	.cloud1,
+	.cloud2,
+	.cloud3 {
+		width: 40%;
+	}
+
+	.bird {
+		width: 130px;
+	}
+
+	.rainbow {
+		width: 35%;
+	}
+
+	.balloon {
+		width: 200px;
+	}
+}
