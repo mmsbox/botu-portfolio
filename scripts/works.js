@@ -17,7 +17,7 @@ fetch(jsonPath)
 				heroTitle.textContent = filterTag === 'All' ? 'All Works' : filterTag;
 			}
 
-			const worksList = document.getElementById('works-list');
+			const worksList = document.getElementById('works-gallery');
 			if (!worksList) return; // 要素がなければ処理を抜ける
 			worksList.innerHTML = '';
 
