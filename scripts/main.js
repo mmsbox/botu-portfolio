@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// ✅ JSON読み込み & 表示
 	Promise.all([
-		fetch('/data/works.json').then((res) => res.json()),
+		fetch('./data/works.json').then((res) => res.json()),
 		new Promise((resolve) => window.addEventListener('load', resolve)),
 	]).then(([data]) => {
 		const gallery = document.getElementById('works-gallery');
