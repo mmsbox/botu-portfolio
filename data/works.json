@@ -8,9 +8,9 @@
 		"problem": ["整備業界に多い古い印象を払拭しつつ、地域性と誠実さを感じられるデザイン構成"],
 		"points": "・無機質で古い印象になりがちな業界サイトを、やわらかく落ち着いたブルーと読みやすい情報設計で刷新\n・サービスごとの紹介セクションは専門用語を避け、ユーザーに伝わる言葉で構成\n・実案件に基づいて制作したがクライアント都合で中止となったため、内容を再構成し“実務ベースの架空案件”として完結",
 		"tools": "Figma / Illustrator",
-		"mockup": "/assets/Works/Mockup_1.webp",
-		"card_mockup": "/assets/Works/card-1.webp",
-		"pc_image": "/assets/Works/Works-1.webp",
+		"mockup": "../assets/Works/Mockup_1.webp",
+		"card_mockup": "../assets/Works/card-1.webp",
+		"pc_image": "../assets/Works/Works-1.webp",
 		"sp_image": "https://via.placeholder.com/300x600?text=SP",
 		"tags": ["Web", "Figma"]
 	},
@@ -25,10 +25,10 @@
 		"problem": "【背景と課題】\n- ビジネス英会話は必要性を感じていても、「忙しくて時間がない」「何から始めればいいかわからない」という声が多い。\n- 従来の英会話サイトは情報量が多く、初めて訪れるユーザーには心理的ハードルが高い。\n\n【デザインでの解決策】\n- サービスの3要素（話す・成長・支援）を直感的に理解できるヒーロースライダーを配置し、第一印象で世界観に引き込む。\n- 余白を広めにとり、情報を“詰め込みすぎない”レイアウトで安心感を演出。\n- 親しみやすい色合いとイラストを併用し、信頼感と柔らかさを両立。\n\n【実装面の課題】\n- 実験的なUI（横スクロールやスライダー）を導入しつつも、CSS設計や命名規則の統一に改善余地あり。\n- 今後はBEMやFLOCSSを採用し、スケーラブルで保守性の高いコードを目指す。",
 		"points": "• ヒーロービジュアル：直感的なループスライダーで3要素（話す・成長・支援）を訴求。\n• Pricingセクション：カード型＋横スクロール構成で、複数プランを見やすく提示。\n• 動きの統一感：GSAPによるアニメーションやスライドUIで、世界観を損なわない動きを実現。",
 		"tools": "Figma / Photoshop / Illustrator / HTML / CSS / JavaScript / GSAP",
-		"mockup": "/assets/Works/Mockup_2.webp",
-		"code_url": "/Works/PhaseTalk",
-		"pc_image": "/assets/Works/Works-2.png",
-		"sp_image": "/assetsassets/Works/Works-2__sp.png",
+		"mockup": "../assets/Works/Mockup_2.webp",
+		"code_url": "../Works/PhaseTalk",
+		"pc_image": "../assets/Works/Works-2.png",
+		"sp_image": "../assetsassets/Works/Works-2__sp.png",
 		"tags": ["Web"]
 	},
 	{
