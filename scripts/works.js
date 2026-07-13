@@ -1,5 +1,5 @@
 // JSONファイルは絶対パスで取得
-const jsonPath = '/data/works.json';
+const jsonPath = '../data/works.json';
 
 // JSONを読み込んで作品を表示・フィルター
 fetch(jsonPath)
